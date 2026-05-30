@@ -32,10 +32,10 @@ jobs:
 
       - name: Run tests
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: pytest tests/ -v --tb=short
 
-      - name: Check code formatting (optional)
+      - name: Lint with ruff
         run: |
           pip install ruff
-          ruff check app/ frontend/ tests/ --ignore E501
+          ruff check app.py tests/ --ignore E501
