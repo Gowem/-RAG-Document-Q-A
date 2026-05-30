@@ -8,19 +8,16 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-
-load_dotenv()
-
 from langchain_community.document_loaders import PyMuPDFLoader, TextLoader
 from langchain_community.document_loaders import Docx2txtLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
-from langchain.chains import RetrievalQA
-from langchain.prompts import PromptTemplate
 from langchain_groq import ChatGroq
 from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 import chromadb
 from chromadb.config import Settings
+
+load_dotenv()
 
 # ── Logging ───────────────────────────────────────────────────
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)s  %(message)s")
