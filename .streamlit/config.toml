@@ -1,0 +1,11 @@
+[server]
+maxUploadSize = 200          # MB — allow large PDFs
+headless = true
+enableCORS = false
+enableXsrfProtection = false
+
+[browser]
+gatherUsageStats = false
+
+[runner]
+magicEnabled = true
